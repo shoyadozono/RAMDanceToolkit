@@ -5,7 +5,7 @@
 #include "ramMain.h"
 
 // And then, include your scenes
-#include "OrbitSystem.h"
+#include "PlanetarySystem.h"
 
 class ofApp : public rdtk::BaseApp
 {

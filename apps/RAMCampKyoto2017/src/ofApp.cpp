@@ -16,7 +16,7 @@ void ofApp::setup()
 	rdtk::SceneManager& sceneManager = rdtk::SceneManager::instance();
 
   // add your scene at here
-    sceneManager.addScene<OrbitSystem>();
+    sceneManager.addScene<PlanetarySystem>();
 }
 
 //--------------------------------------------------------------
