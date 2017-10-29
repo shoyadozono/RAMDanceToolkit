@@ -19,18 +19,22 @@ PlanetarySystem::PlanetarySystem()
     , mLineOpacity(0.0)
     , mLineMode(OF_PRIMITIVE_LINE_STRIP)
 #ifdef USE_MOTIONER
-    , mVelocityThreshold(2.5)
+    , mVelocityThreshold(1.0)
 #else
-    , mVelocityThreshold(0.25)
+    , mVelocityThreshold(0.20)
 #endif
 {;}
 
 void PlanetarySystem::setup()
 {
-    mTargets.push_back(rdtk::Actor::JOINT_LEFT_HAND);
-    mTargets.push_back(rdtk::Actor::JOINT_RIGHT_HAND);
-    mTargets.push_back(rdtk::Actor::JOINT_LEFT_ANKLE);
-    mTargets.push_back(rdtk::Actor::JOINT_RIGHT_ANKLE);
+    // mTargets.push_back(rdtk::Actor::JOINT_LEFT_HAND);
+    // mTargets.push_back(rdtk::Actor::JOINT_RIGHT_HAND);
+    // mTargets.push_back(rdtk::Actor::JOINT_LEFT_ANKLE);
+    // mTargets.push_back(rdtk::Actor::JOINT_RIGHT_ANKLE);
+    mTargets.push_back(rdtk::Actor::JOINT_LEFT_SHOULDER);
+    mTargets.push_back(rdtk::Actor::JOINT_RIGHT_SHOULDER);
+    mTargets.push_back(rdtk::Actor::JOINT_LEFT_HIP);
+    mTargets.push_back(rdtk::Actor::JOINT_RIGHT_HIP);
     mTargets.push_back(rdtk::Actor::JOINT_HEAD);
     
     mVelocityManagers.resize(mTargets.size());
@@ -199,7 +203,7 @@ void PlanetarySystem::drawPlanet(const rdtk::NodeArray &nodeArray)
 #ifdef USE_MOTIONER
                 planet->speed(vel * 0.002);
 #else
-                planet->speed(vel * 0.05 + 0.0001);
+                planet->speed(vel * 0.01 + 0.0001);
 #endif
             }
         }

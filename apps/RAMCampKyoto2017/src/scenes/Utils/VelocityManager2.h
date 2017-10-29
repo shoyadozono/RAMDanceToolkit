@@ -1,5 +1,5 @@
 //
-//  VelocityManager.h
+//  VelocityManager2.h
 //
 //  Created by Shoya DOZONO on 2017/10/27.
 //
@@ -9,11 +9,11 @@
 
 #include "ramMain.h"
 
-class VelocityManager {
+class VelocityManager2 {
     
 public:
-    VelocityManager();
-    virtual ~VelocityManager() = default;
+    VelocityManager2();
+    virtual ~VelocityManager2() = default;
     
     void setVelocity(ofVec3f velocity);
     bool update();

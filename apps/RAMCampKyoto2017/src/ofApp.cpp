@@ -17,6 +17,7 @@ void ofApp::setup()
 
   // add your scene at here
     sceneManager.addScene<PlanetarySystem>();
+    sceneManager.addScene<OrbitSystem>();
 }
 
 //--------------------------------------------------------------

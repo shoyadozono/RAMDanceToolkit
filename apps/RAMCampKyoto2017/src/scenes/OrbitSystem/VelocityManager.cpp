@@ -1,4 +1,4 @@
-//
+  //
 //  VelocityManager.cpp
 //
 //  Created by Shoya DOZONO on 2017/10/27.
@@ -8,7 +8,7 @@
 #include "VelocityManager.h"
 
 VelocityManager::VelocityManager()
-    : mBufferSize(20)
+    : mBufferSize(30)
 {;}
 
 void VelocityManager::setVelocity(ofVec3f velocity)
@@ -30,14 +30,13 @@ bool VelocityManager::update()
     
     mAverageVelocity = ofVec3f(0);
     
-    if ( mBuffer.size() >= mBufferSize )
+    if ( mBuffer.size() == mBufferSize )
     {
         for (int i=1; i < mBuffer.size(); i++)
         {
             mAverageVelocity += mBuffer[i];
         }
         mAverageVelocity /= (mBuffer.size()-1);
-        mAverageVelocity *= -1.0;
         
         return true;
     }
@@ -56,16 +55,6 @@ void VelocityManager::reset()
     mVelocity           = ofVec3f(0);
     mPrevVelocity       = ofVec3f(0);
     mAverageVelocity    = ofVec3f(0);
-}
-
-bool VelocityManager::isComputeAverage()
-{
-    return mBuffer.size() >= mBufferSize;
-}
-
-ofVec3f & VelocityManager::get()
-{
-    return mVelocity;
 }
 
 ofVec3f & VelocityManager::getAverage()

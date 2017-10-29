@@ -10,7 +10,7 @@
 #include "ramMain.h"
 #include "ofxOsc.h"
 #include "Planet.h"
-#include "VelocityManager.h"
+#include "VelocityManager2.h"
 
 #define USE_MOTIONER
 
@@ -43,7 +43,7 @@ private:
     int mMaxNumPlanets;
     vector < ofPtr<Planet> > mPlanets;
     vector <int> mTargets;
-    vector <VelocityManager> mVelocityManagers;
+    vector <VelocityManager2> mVelocityManagers;
     float mScale;
     float mExapandSpeed;
     float mVelocityThreshold;

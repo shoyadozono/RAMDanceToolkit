@@ -6,6 +6,7 @@
 
 // And then, include your scenes
 #include "PlanetarySystem.h"
+#include "OrbitSystem.h"
 
 class ofApp : public rdtk::BaseApp
 {
